@@ -1,0 +1,17 @@
+<% book_comments.each do |book_comment| %>
+  <div class="row py-3">
+    <div class="col-2">
+      <%= attachment_image_tag book_comment.user, :profile_image, fallback: "no-image-icon.jpg", size: "40x40" %>
+      <%= book_comment.user.name %>
+    </div>
+    <div class="col-7">
+      <%= book_comment.comment %>
+    </div>
+    <div class="col-3">
+      <% if book_comment.user_id == current_user.id %>
+        <%= link_to "destroy", book_book_comment_path(book_id:@book , id:book_comment), method: :delete, class: "btn btn-danger", remote:true %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
