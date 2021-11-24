@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h2>searches</h2>
+      <% if @range == "1" %>
+        <%= render "users/index", users: @user %>
+      <% else %>
+        <%= render "books/index", books: @book %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<h2></h2>
