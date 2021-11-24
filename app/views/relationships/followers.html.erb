@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-10">
       <h2>followers</h2>
-      <%= render 'users/index',users: @user.follower_user %>
+      <% if @user.follower_user.exists? %>
+        <%= render 'users/index',users: @user.follower_user %>
+      <% else %>
+       <P>ユーザーはいません</P>
+      <% end %>
     </div>
   </div>
 </div>
